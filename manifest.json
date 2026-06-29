@@ -1,0 +1,11 @@
+{
+  "name": "หวยลาว Premium",
+  "short_name": "หวยลาว",
+  "description": "ระบบทายผลหวยลาว",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0012",
+  "theme_color": "#C41230",
+  "orientation": "portrait",
+  "icons": []
+}

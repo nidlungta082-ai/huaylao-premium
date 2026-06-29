@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+
+  <title>ทายผลหวยลาว</title>
+
+  <meta name="theme-color" content="#C41230" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="หวยลาว" />
+
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/splash.css" />
+  <link rel="stylesheet" href="css/keypad.css" />
+  <link rel="stylesheet" href="css/popup.css" />
+  <link rel="stylesheet" href="css/history.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <main id="app" class="app">
+
+    <!-- หน้าโหลด -->
+    <section id="splashPage" class="splash-page active">
+      <div class="splash-orb">
+        <img src="https://flagcdn.com/w320/la.png" alt="ธงลาว" />
+      </div>
+
+      <div class="splash-title">
+        ทายผล<br />หวยลาว
+      </div>
+
+      <div id="splashText" class="splash-text">
+        กำลังโหลดกิจกรรม...
+      </div>
+
+      <div class="splash-bar">
+        <div id="splashBar" class="splash-bar-fill"></div>
+      </div>
+
+      <div id="splashPercent" class="splash-percent">0%</div>
+    </section>
+
+    <!-- หน้าเว็บหลัก -->
+    <section id="homePage" class="page active-page">
+      <header class="app-header">
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/menu.png" alt="เมนู" />
+        </button>
+
+        <div class="header-title">
+          <img src="https://flagcdn.com/w80/la.png" alt="ธงลาว" />
+          <span id="headerTitle">ทายผลหวยลาว</span>
+        </div>
+
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/coins.png" alt="เหรียญ" />
+        </button>
+      </header>
+
+      <section class="hero-card">
+        <div id="drawDate" class="draw-pill">กำลังโหลด...</div>
+        <h1 id="mainTitle">ทายผลหวยลาว</h1>
+        <p>เลือกเลขที่มั่นใจ แล้วส่งคำตอบได้เลย</p>
+
+        <div class="hero-balls">
+          <span>9</span>
+          <span>2</span>
+          <span>7</span>
+        </div>
+      </section>
+
+      <section id="closedCard" class="glass-card closed-card">
+        <img src="https://img.icons8.com/fluency/128/lock.png" alt="ปิดระบบ" />
+        <h2>ขณะนี้ปิดรับคำทาย</h2>
+        <p>โปรดรอรอบถัดไป หรือติดต่อแอดมิน</p>
+        <button class="primary-button" onclick="Contact.openAdmin()">ติดต่อแอดมิน</button>
+      </section>
+
+      <section id="formCard" class="glass-card">
+        <h2 class="section-title">เลือกเลขที่ต้องการทาย</h2>
+
+        <div class="number-grid">
+          <button id="digit2Card" class="number-card" onclick="Keypad.open('digit2')">
+            <span>เลข 2 ตัว</span>
+            <strong id="digit2Text">--</strong>
+            <small>แตะเพื่อเลือกเลข</small>
+          </button>
+
+          <button id="digit3Card" class="number-card" onclick="Keypad.open('digit3')">
+            <span>เลข 3 ตัว</span>
+            <strong id="digit3Text">---</strong>
+            <small>แตะเพื่อเลือกเลข</small>
+          </button>
+        </div>
+
+        <div class="form-area">
+          <label>ชื่อ</label>
+          <div class="input-box">
+            <img src="https://img.icons8.com/fluency/96/user-male-circle.png" alt="ชื่อ" />
+            <input id="nameInput" type="text" placeholder="กรอกชื่อของคุณ" autocomplete="off" />
+          </div>
+
+          <label>เบอร์โทร</label>
+          <div class="input-box">
+            <img src="https://img.icons8.com/fluency/96/phone.png" alt="เบอร์โทร" />
+            <input id="phoneInput" type="tel" inputmode="numeric" maxlength="10" placeholder="กรอกเบอร์โทร 10 หลัก" autocomplete="off" />
+          </div>
+        </div>
+
+        <button id="submitButton" class="primary-button" onclick="App.confirmSubmit()">
+          ส่งคำตอบ
+        </button>
+
+        <p id="roundText" class="mini-note">รอบปัจจุบัน: กำลังโหลด...</p>
+      </section>
+    </section>
+
+    <!-- หน้า ประวัติ -->
+    <section id="historyPage" class="page">
+      <header class="app-header">
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/time-machine.png" alt="ประวัติ" />
+        </button>
+
+        <div class="header-title">
+          <img src="https://img.icons8.com/fluency/96/time-machine.png" alt="ประวัติ" />
+          <span>ประวัติการทาย</span>
+        </div>
+
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/calendar.png" alt="ปฏิทิน" />
+        </button>
+      </header>
+
+      <section class="glass-card">
+        <div class="history-search">
+          <div class="input-box">
+            <img src="https://img.icons8.com/fluency/96/phone.png" alt="เบอร์โทร" />
+            <input id="historyPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="กรอกเบอร์โทร" />
+          </div>
+
+          <button class="small-button" onclick="History.load()">ค้นหา</button>
+        </div>
+
+        <div id="historyList" class="history-list">
+          <p class="mini-note">ยังไม่มีข้อมูลประวัติ</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- หน้า ติดต่อ -->
+    <section id="contactPage" class="page">
+      <header class="app-header">
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="ติดต่อ" />
+        </button>
+
+        <div class="header-title">
+          <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="แอดมิน" />
+          <span>ติดต่อแอดมิน</span>
+        </div>
+
+        <button class="icon-button">
+          <img src="https://img.icons8.com/fluency/96/chat.png" alt="แชท" />
+        </button>
+      </header>
+
+      <section class="glass-card contact-card">
+        <img class="line-icon" src="https://img.icons8.com/color/144/line-me.png" alt="LINE" />
+        <h2>ติดต่อแอดมิน</h2>
+        <p>สอบถามกิจกรรม หรือแจ้งปัญหาการใช้งาน</p>
+
+        <button class="primary-button" onclick="Contact.openAdmin()">
+          ติดต่อผ่าน LINE
+        </button>
+      </section>
+    </section>
+
+    <!-- เมนูล่าง -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="App.showPage('homePage', this)">
+        <img src="https://img.icons8.com/fluency/96/home.png" alt="หน้าหลัก" />
+        <span>หน้าหลัก</span>
+      </button>
+
+      <button class="nav-item" onclick="App.showPage('historyPage', this)">
+        <img src="https://img.icons8.com/fluency/96/time-machine.png" alt="ประวัติ" />
+        <span>ประวัติ</span>
+      </button>
+
+      <button class="nav-item" onclick="App.showPage('contactPage', this)">
+        <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="ติดต่อ" />
+        <span>ติดต่อแอดมิน</span>
+      </button>
+    </nav>
+
+    <!-- Bottom Sheet Keypad -->
+    <div id="sheetOverlay" class="sheet-overlay" onclick="Keypad.closeByOverlay(event)">
+      <div id="keypadSheet" class="keypad-sheet">
+        <div class="sheet-handle"></div>
+
+        <div class="sheet-header">
+          <h3 id="keypadTitle">เลือกเลข</h3>
+          <button onclick="Keypad.close()">ปิด</button>
+        </div>
+
+        <div id="keyDisplay" class="key-display">--</div>
+
+        <div class="key-grid">
+          <button onclick="Keypad.press('1')">1</button>
+          <button onclick="Keypad.press('2')">2</button>
+          <button onclick="Keypad.press('3')">3</button>
+          <button onclick="Keypad.press('4')">4</button>
+          <button onclick="Keypad.press('5')">5</button>
+          <button onclick="Keypad.press('6')">6</button>
+          <button onclick="Keypad.press('7')">7</button>
+          <button onclick="Keypad.press('8')">8</button>
+          <button onclick="Keypad.press('9')">9</button>
+          <button class="delete-key" onclick="Keypad.delete()">ลบ</button>
+          <button onclick="Keypad.press('0')">0</button>
+          <button class="confirm-key" onclick="Keypad.confirm()">ยืนยัน</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popupOverlay" class="popup-overlay">
+      <div class="popup-card">
+        <img id="popupIcon" src="https://img.icons8.com/fluency/128/error.png" alt="แจ้งเตือน" />
+        <h3 id="popupTitle">แจ้งเตือน</h3>
+        <div id="popupMessage"></div>
+
+        <div id="popupActions" class="popup-actions">
+          <button class="ghost-button" onclick="Popup.close()">ยกเลิก</button>
+          <button class="gold-button" onclick="App.submit()">ยืนยัน</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Layer -->
+    <div id="loadingLayer" class="loading-layer">
+      <div class="loader"></div>
+      <p>กำลังทำรายการ...</p>
+    </div>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/keypad.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/splash.js"></script>
+  <script src="js/pwa.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

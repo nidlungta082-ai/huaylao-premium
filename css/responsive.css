@@ -1,0 +1,208 @@
+/* ==========================================
+   หวยลาว Premium
+   Responsive
+========================================== */
+
+/* iPhone SE */
+
+@media (max-width:320px){
+
+.app{
+
+padding-left:10px;
+padding-right:10px;
+
+}
+
+.hero-card h1{
+
+font-size:28px;
+
+}
+
+.number-card strong{
+
+font-size:28px;
+
+}
+
+.primary-button{
+
+height:56px;
+
+font-size:18px;
+
+}
+
+.bottom-nav{
+
+height:72px;
+
+}
+
+.key-grid button{
+
+height:58px;
+
+font-size:22px;
+
+}
+
+}
+
+/* 360 */
+
+@media (min-width:321px) and (max-width:360px){
+
+.hero-card h1{
+
+font-size:31px;
+
+}
+
+.number-card strong{
+
+font-size:30px;
+
+}
+
+}
+
+/* 390 */
+
+@media (min-width:361px) and (max-width:390px){
+
+.hero-card h1{
+
+font-size:33px;
+
+}
+
+}
+
+/* 430 */
+
+@media (min-width:391px){
+
+.hero-card h1{
+
+font-size:36px;
+
+}
+
+}
+
+/* Landscape */
+
+@media (orientation:landscape){
+
+.app{
+
+max-width:520px;
+
+}
+
+}
+
+/* Disable Zoom */
+
+input,
+textarea,
+select{
+
+font-size:16px !important;
+
+}
+
+/* Prevent Horizontal */
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+/* Safe Area */
+
+body{
+
+padding-top:env(safe-area-inset-top);
+
+padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+/* Smooth */
+
+*{
+
+scroll-behavior:smooth;
+
+}
+
+/* Selection */
+
+::selection{
+
+background:#ffd54a;
+
+color:#2a0000;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#555;
+
+border-radius:99px;
+
+}
+
+/* Animation */
+
+.page{
+
+animation:fadePage .25s ease;
+
+}
+
+@keyframes fadePage{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Reduce Motion */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none!important;
+
+transition:none!important;
+
+}
+
+}

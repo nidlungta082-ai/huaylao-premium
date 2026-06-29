@@ -1,0 +1,218 @@
+/* ==========================================
+   หวยลาว Premium
+   Popup
+========================================== */
+
+.popup-overlay{
+
+    position:fixed;
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+
+    background:rgba(0,0,0,.60);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s ease;
+
+}
+
+.popup-overlay.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+/* ========================= */
+
+.popup-card{
+
+    width:100%;
+    max-width:360px;
+
+    border-radius:30px;
+
+    padding:28px;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    rgba(28,10,22,.98),
+    rgba(9,0,14,.98));
+
+    border:1px solid rgba(255,215,70,.35);
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.55),
+
+    0 0 30px rgba(255,215,70,.10);
+
+    transform:
+
+    scale(.82);
+
+    transition:.25s ease;
+
+}
+
+.popup-overlay.show .popup-card{
+
+    transform:
+
+    scale(1);
+
+}
+
+/* ========================= */
+
+.popup-card img{
+
+    width:82px;
+
+    margin:auto;
+
+    filter:
+
+    drop-shadow(0 0 15px rgba(255,215,70,.35));
+
+}
+
+/* ========================= */
+
+.popup-card h3{
+
+    margin:
+
+    18px 0 10px;
+
+    color:#ffe58b;
+
+    font-size:28px;
+
+    font-weight:900;
+
+}
+
+/* ========================= */
+
+#popupMessage{
+
+    margin-top:8px;
+
+    color:#ffffffd5;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    word-break:break-word;
+
+}
+
+/* ========================= */
+
+.popup-actions{
+
+    margin-top:26px;
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+/* ========================= */
+
+.popup-actions button{
+
+    flex:1;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    transition:.15s;
+
+}
+
+.popup-actions button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ========================= */
+
+.ghost-button{
+
+    background:#252525;
+
+    color:white;
+
+}
+
+/* ========================= */
+
+.gold-button{
+
+    color:#311900;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #ffe58b,
+    #ffca2c);
+
+    box-shadow:
+
+    0 0 18px rgba(255,215,70,.35);
+
+}
+
+/* ========================= */
+
+@media(max-width:430px){
+
+.popup-card{
+
+padding:24px;
+
+}
+
+.popup-card h3{
+
+font-size:24px;
+
+}
+
+.popup-actions button{
+
+height:50px;
+
+font-size:16px;
+
+}
+
+}
