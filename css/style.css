@@ -74,7 +74,7 @@ img {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  padding: calc(14px + var(--safe-top)) 14px calc(104px + var(--safe-bottom));
+  padding: calc(14px + var(--safe-top)) 14px calc(200px + var(--safe-bottom));
   background:
     radial-gradient(circle at 50% 0%, rgba(247, 201, 72, 0.24), transparent 26%),
     radial-gradient(circle at 18% 28%, rgba(196, 18, 48, 0.32), transparent 31%),
